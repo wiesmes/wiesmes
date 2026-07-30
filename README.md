@@ -27,6 +27,7 @@ GPA: 3.91
 - Object-Oriented Programming (Java)
 - Digital Systems
 - Electronic Circuits
+- Semiconductor devices
 
 ## 💼 Experience
 
