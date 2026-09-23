@@ -33,22 +33,35 @@ GPA: 3.91
 ## 💼 Experience
 
 ### 🌊 Lehigh Underwater Robotics (RoboSub)
-
 **Fall 2025 – Present**
 
-- Develop software for an autonomous underwater vehicle, owning the ROS2 perception and navigation stack on Ubuntu Linux and NVIDIA Jetson Nano for a team of 9.
-- Implemented map-free Gap Follow navigation using AprilTag detection and Intel RealSense RGB-D perception, holding heading through gates without a global map.
-- Built a simulation-first validation workflow so limited pool time tests pre-validated changes.
+**Software**
+- Develop the ROS 2 perception and navigation stack for an autonomous underwater vehicle on Ubuntu Linux and an NVIDIA Jetson Nano.
+- Implemented map-free gap-follow navigation from Intel RealSense RGB-D depth and AprilTag detection; the vehicle holds heading through gates without a global map.
+- Set up a simulation-first validation workflow so changes are tested before scarce pool time.
+
+**Hardware**
+- Integrated and tested the AUV's power, sensing, compute, and actuation subsystems on the bench and in the pool.
+- Isolated power-delivery, wiring, sensor, sonar, thruster, and ESC faults with an oscilloscope and multimeter.
 
 ---
 
-### ⚡ Undergraduate Researcher — High-Performance Systems, Lehigh University
+### 🏎️ Teaching Assistant — ECE Autonomous Systems Laboratory (E116), Lehigh University
 
-**Feb 2026 – Present**
+**Aug 2026 – Present**
 
-- Built FPGA-accelerated ML inference pipelines in C++ and OpenCL using High-Level Synthesis, reaching 8.1 ms latency at 150 MHz and 125 FPS on real-time vision workloads.
-- Benchmarked a shared model across CPU, CUDA GPU, and FPGA backends — 35% lower latency and 6.4× lower energy per inference.
-- Optimized kernel initiation interval through loop pipelining and array partitioning across block RAM.
+- Support 80+ students across 16 teams building Linux/ROS 2 autonomous vehicles; cover PWM calibration, stereo vision, gap-follow navigation, and race-day scoring.
+- Diagnose hardware and software faults on live platforms and separate wiring, calibration, and software root causes.
+
+---
+
+### ⚡ Undergraduate Researcher, High-Performance Systems, Lehigh University · 
+**Feb 2026 to present**
+
+- Integrated a Vitis HLS kernel into a Zynq-7020 system over AXI4, packaged it as IP in a Vivado block design, and generated a bitstream that met timing (WNS +1.314 ns).
+- Brought up the Arty Z7-20: bitstream over JTAG, bare-metal Vitis platform, ARM-side C driver that verifies all 256 results over UART.
+- Built a scripted HLS flow (Tcl, Python, Makefiles) that logs latency and resource metrics per kernel variant.
+- Hand-optimized a 32x32 int16 GEMM to II=1 (165,953 to 1,032 cycles); the baseline for research on LLM-guided HLS optimization.
 
 ---
 
@@ -56,42 +69,56 @@ GPA: 3.91
 
 **Jun 2026 – Present**
 
-- Trained a feedforward deep neural network in Keras/TensorFlow, benchmarked against a tuned logistic regression baseline on an imbalanced binary classification task.
-- Built end-to-end ML pipelines in Scikit-learn with imputation, one-hot encoding, and hyperparameter optimization via GridSearchCV.
+**AI Studio capstone with Automation Anywhere (Fall 2026)**
+- Fine-tuned SmolLM2-360M-Instruct and Qwen2.5-1.5B-Instruct with LoRA/QLoRA (PyTorch, Hugging Face PEFT) on 26,900 customer-support tickets for theme labeling, with an LLM as the teacher model.
+- Ran EDA and evaluation: removed 918 duplicate rows, scored outputs with an LLM judge, and traced a 0/5 verbatim-copying result to model capacity (Qwen baseline 3.68/5 vs. fine-tuned 3.75/5).
 
+**Summer ML foundations**
+- Trained a feedforward neural network in Keras/TensorFlow and benchmarked it against a tuned logistic regression baseline on an imbalanced binary classification task (84.6% accuracy, 0.680 F1).
+- Built end-to-end Scikit-learn pipelines with imputation, one-hot encoding, and GridSearchCV hyperparameter search.
 ---
 
 ### 🔬 Research Assistant — Computational Modeling & ML Systems, Lehigh University
 
 **Jan 2025 – Jan 2026**
 
-- Built a Python digital twin interface unifying simulation, control, and model analysis, with asynchronous subprocess and multithreaded execution for non-blocking monitoring.
-- Accelerated physics simulation and optimization using JAX and CUDA GPU parallelism.
-- Integrated ML-based parameter estimation into the simulation loop, improving prediction accuracy by over 35%.
+- Built a Python/Tkinter digital twin interface unifying simulation, control, and model analysis, with asynchronous subprocess and multithreaded execution for non-blocking monitoring.
+- Ported a NumPy physics-simulation and optimization pipeline to JAX; runtime fell from 8 hours to under 1 hour per run.
+- Integrated ML-based parameter estimation into the simulation loop.
 
 ## 🛠️ Technical Skills
 
-**Languages:** C, C++, CUDA, Python, Java, SystemVerilog, OpenCL, SQL, JavaScript/TypeScript
+**Languages:** C, C++, Python, SystemVerilog, Java, MATLAB, Tcl
 
-**Robotics & Perception:** ROS2, autonomous navigation, sensor fusion, RGB-D perception, Intel RealSense, AprilTag, NVIDIA Jetson Nano
+**FPGA & Digital Design:** Vivado, Vitis HLS, Vitis, Zynq-7020, AXI4, Icarus Verilog, GTKWave, Yosys, FSM design, timing closure
 
-**Machine Learning:** PyTorch, TensorFlow, Keras, JAX, Scikit-learn
+**Embedded & Hardware:** Raspberry Pi Pico (RP2040), MSP430, bare-metal ARM (Cortex-A9), PWM, ADC, JTAG, UART, Multisim, PSpice, SolidWorks
 
-**Accelerated Computing:** CUDA GPU parallelism, FPGA, High-Level Synthesis (HLS), latency and energy benchmarking
+**Bench & Test:** Oscilloscopes, DMMs, function generators, soldering, board bring-up, fault isolation
 
-**Embedded & Hardware:** Raspberry Pi Pico, MSP430, PWM, ADC, Icarus Verilog, GTKWave, Yosys
+**Robotics & Perception:** ROS 2, NVIDIA Jetson Nano, Intel RealSense RGB-D, AprilTag, gap-follow navigation
 
-**Data & Tools:** NumPy, Pandas, Matplotlib, Ubuntu Linux, Git, Docker
+**Machine Learning:** PyTorch, Hugging Face PEFT (LoRA/QLoRA), TensorFlow/Keras, Scikit-learn, JAX
 
-**Web Development:** React, Next.js, Flask, Firebase
+**Build Flow & Tools:** Linux, Git, Makefiles, batch synthesis scripting, report parsing, NumPy, Pandas, Matplotlib
 
 ## 📂 Featured Projects
 
+### ⚡ hls-llm-study — HLS Accelerator and LLM-Guided Optimization
+
+Vitis HLS kernels on a Zynq-7020 with a scripted synthesis flow (Tcl, Python, Makefiles) that logs latency and resource metrics per variant. A vecadd accelerator runs on the Arty Z7-20 with a bare-metal C driver; a hand-optimized 32×32 GEMM reaches II=1 (165,953 to 1,032 cycles) as the baseline for testing whether an LLM can optimize kernels from synthesis feedback.
+
+**Technologies:** Vitis HLS, Vivado, C/C++, Python, Tcl, Zynq-7020
+🔗 github.com/wiesmes/hls-llm-study
+
+---
+
 ### 🌊 RoboSub Autonomy Stack
 
-ROS2 perception and navigation stack for an autonomous underwater vehicle — map-free gap-follow navigation fusing RGB-D depth with AprilTag detection, running on NVIDIA Jetson Nano.
+ROS 2 perception and navigation stack for an autonomous underwater vehicle — map-free gap-follow navigation using RGB-D depth and AprilTag detection, running on an NVIDIA Jetson Nano.
 
-**Technologies:** ROS2, C++, Python, Ubuntu Linux, Jetson Nano, Intel RealSense
+**Technologies:** ROS 2, Python, Ubuntu Linux, Jetson Nano, Intel RealSense
+🔗 github.com/wiesmes/Underwater-robotics-autonomy
 
 ---
 
@@ -100,6 +127,16 @@ ROS2 perception and navigation stack for an autonomous underwater vehicle — ma
 Seven-state synchronous Moore FSM in SystemVerilog controlling house lighting, a visualization display, and a servo spotlight with performer tracking. Hand-derived through Karnaugh map minimization and verified to a synthesized netlist — exactly three flip-flops, no inferred latches.
 
 **Technologies:** SystemVerilog, Icarus Verilog, GTKWave, Yosys
+🔗 github.com/wiesmes/theater-lighting-fsm
+
+---
+
+### 🔧 SystemVerilog RTL Design Portfolio
+
+17 RTL modules spanning combinational and sequential logic, each with a directed testbench simulated in Icarus Verilog, debugged in GTKWave, and synthesized with Yosys.
+
+**Technologies:** SystemVerilog, Icarus Verilog, GTKWave, Yosys
+🔗 github.com/wiesmes/Systemverilog-digital-design
 
 ---
 
@@ -108,6 +145,7 @@ Seven-state synchronous Moore FSM in SystemVerilog controlling house lighting, a
 Closed-loop thermal control on a Raspberry Pi Pico using thermistor ADC sensing and PWM fan drive through an N-channel MOSFET. Holds 29.4–30.8 °C around a 30 °C setpoint with 14-second response.
 
 **Technologies:** Raspberry Pi Pico, Embedded C, PWM, ADC, SolidWorks
+🔗 github.com/wiesmes/temperature-fan-controller
 
 ---
 
@@ -116,6 +154,7 @@ Closed-loop thermal control on a Raspberry Pi Pico using thermistor ADC sensing 
 Digital twin simulation platform for modeling industrial drying processes using physics-based simulation, machine learning optimization, and interactive visualization.
 
 **Technologies:** Python, JAX, Tkinter, Matplotlib
+🔗 github.com/wiesmes/Industrial-drying-oven-digital-twin
 
 ---
 
@@ -127,7 +166,7 @@ Comparing a tuned logistic regression baseline against a Keras feedforward neura
 
 ---
 
-### 🔎 HawkSearch — Lehigh Agentathon
+### 🔎 HawkSearch — Lehigh Agentathon (Best Value Award, April 2026)
 
 An AI agent workflow that retrieves, analyzes, and ranks Lehigh research profiles using large language models.
 
@@ -147,7 +186,7 @@ A multimodal AI pipeline that extracts structured information from receipts and 
 
 A real-time IoT safety monitoring system integrating sensors, microcontroller programming, cloud telemetry, and data visualization.
 
-**Technologies:** MSP430, Embedded C, ThingSpeak, C#
+**Technologies:** MSM430, Embedded C, ThingSpeak, C#
 
 ## ⚡ Fun Fact
 
