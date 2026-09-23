@@ -1,10 +1,10 @@
 # Hi, I'm Wiesmes! 👋
 
-I'm an Electrical Engineering student at Lehigh University working at the intersection of **robotics, machine learning, and accelerated computing** — building systems where software has to run fast on real hardware.
+I'm an Electrical Engineering student at Lehigh University working on **FPGA design, hardware/software integration, and the tooling around them** — building things that have to work on real silicon, then measuring whether they do.
 
-I develop software for an autonomous underwater vehicle competing in RoboSub, research FPGA and GPU acceleration for real-time ML inference, and build simulation and digital twin tooling for computational modeling research. I'm a Machine Learning Fellow with Break Through Tech AI.
+My current research asks whether an LLM can optimize Vitis HLS kernels from synthesis feedback, and I've built the flow to test it: a Zynq-7020 accelerator brought up on an Arty Z7-20, a scripted synthesis loop that logs every variant, and a hand-optimized GEMM as the baseline. Outside the lab I work on the hardware and ROS 2 software for Lehigh's RoboSub vehicle, TA the autonomous systems lab, and fine-tune small language models as a Break Through Tech AI Fellow.
 
-Currently seeking internship opportunities in **robotics, autonomous systems, embedded software, and accelerated computing**.
+Currently seeking **Summer 2027 internships in FPGA/digital design, hardware engineering, and platform validation**.
 
 ## 📫 Connect With Me
 
