@@ -28,6 +28,7 @@ GPA: 3.91
 - Object-Oriented Programming (Java)
 - Electronic Circuits
 - Semiconductor Devices
+- ElectroMagnetism
 - Robotics *(Teaching Assistant)*
 
 ## 💼 Experience
